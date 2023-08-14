@@ -2,47 +2,47 @@ package ru.netology.service;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
-    public class CashbackHackServiceTest {
+public class CashbackHackServiceTest {
 
-        CashbackHackService cashbackHackService = new CashbackHackService();
+    CashbackHackService cashbackHackService = new CashbackHackService();
 
-        @Test
-        public void shouldCalculateRemainWithZeroAmount() {
-            int amount = 0;
+    @Test
+    public void shouldCalculateRemainWithZeroAmount() {
+        int amount = 0;
 
-            int actual = cashbackHackService.remain(amount);
-            int expected = 1000;
+        int actual = cashbackHackService.remain(amount);
+        int expected = 1000;
 
-            assertEquals(actual, expected);
-        }
-
-        @Test
-        public void shouldCalculateRemainWithAmountUnderBoundary() {
-            int amount = 999;
-
-            int actual = cashbackHackService.remain(amount);
-            int expected = 1;
-
-            assertEquals(actual, expected);
-        }
-
-        @Test
-        public void shouldCalculateRemainWithAmountOverBoundary() {
-            int amount = 1001;
-
-            int actual = cashbackHackService.remain(amount);
-            int expected = 999;
-
-            assertEquals(actual, expected);
-        }
-
-        @Test
-        public void shouldCalculateRemainWithAmountEqualsBoundary() {
-            int amount = 10000;
-
-            int actual = cashbackHackService.remain(amount);
-            int expected = 0;
-
-            assertEquals(actual, expected);
-        }
+        assertEquals(actual, expected);
     }
+
+    @Test
+    public void shouldCalculateRemainWithAmountUnderBoundary() {
+        int amount = 999;
+
+        int actual = cashbackHackService.remain(amount);
+        int expected = 1;
+
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    public void shouldCalculateRemainWithAmountOverBoundary() {
+        int amount = 1001;
+
+        int actual = cashbackHackService.remain(amount);
+        int expected = 999;
+
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    public void shouldCalculateRemainWithAmountEqualsBoundary() {
+        int amount = 10000;
+
+        int actual = cashbackHackService.remain(amount);
+        int expected = 0;
+
+        assertEquals(actual, expected);
+    }
+}
